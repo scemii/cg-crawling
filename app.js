@@ -10,8 +10,12 @@ app.use(morgan("dev"));
 
 cron();
 
-app.get("/data", (req, res) => {
-  res.sendFile(path.join(__dirname, ".", "data_ldlc.json"));
+app.get("/3080", (req, res) => {
+  res.sendFile(path.join(__dirname, ".", "3080.json"));
+});
+
+app.get("/3090", (req, res) => {
+  res.sendFile(path.join(__dirname, ".", "3090.json"));
 });
 
 app.use(express.static("./build"));
