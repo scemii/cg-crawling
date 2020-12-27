@@ -5,7 +5,7 @@ const fs = require("fs");
 const ua = require("./ua");
 
 const c3080 = new crawler({
-  maxConnections: 10,
+  maxConnections: 8,
   headers: {
     Accept: "text/plain, */*; q=0.01",
     Referer: "https://www.ldlc.com/",
@@ -25,7 +25,7 @@ const c3080 = new crawler({
 });
 
 const c3090 = new crawler({
-  maxConnections: 10,
+  maxConnections: 8,
   headers: {
     Accept: "text/plain, */*; q=0.01",
     Referer: "https://www.ldlc.com/",
@@ -46,12 +46,12 @@ const c3090 = new crawler({
 
 // Queue just one URL, with default callback
 function cronCrawling() {
-  c3080.queue(
-    "https://www.ldlc.com/recherche/3080/+fcat-4684.html?department=all"
-  );
-  c3090.queue(
-    "https://www.ldlc.com/recherche/3090/+fcat-4684.html?department=all"
-  );
+  c3080.queue({
+    uri: "https://www.ldlc.com/recherche/3080/+fcat-4684.html?department=all",
+  });
+  c3090.queue({
+    uri: "https://www.ldlc.com/recherche/3090/+fcat-4684.html?department=all",
+  });
 }
 
 // cron worker
