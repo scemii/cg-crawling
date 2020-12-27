@@ -6,22 +6,14 @@
       "use": "@vercel/node"
     },
     {
-      "src": "build/**",
+      "src": "./build/**",
       "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "build/index.html"
-    },
-    {
-      "src": "/3080",
-      "dest": "app.js"
-    },
-    {
-      "src": "/3090",
-      "dest": "app.js"
+      "dest": "./build/index.html"
     }
   ]
 }
