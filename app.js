@@ -18,7 +18,7 @@ app.get("/3090", (req, res) => {
   res.sendFile(path.join(__dirname, ".", "3090.json"));
 });
 
-app.use(express.static("./build"));
+app.use("/", express.static(path.join(__dirname + "/build")));
 app.get("*", (req, res) => {
   res.redirect("/");
 });
