@@ -4,6 +4,10 @@
     {
       "src": "app.js",
       "use": "@now/node-server"
+    },
+    {
+      "src": "build/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
